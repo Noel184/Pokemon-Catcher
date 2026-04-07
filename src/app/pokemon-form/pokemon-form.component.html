@@ -1,0 +1,42 @@
+<div class="pokedex-container">
+    <h2>Register New Pokemon</h2>
+
+    <form [formGroup]="pokemonForm" (ngSubmit)="onSubmit()" class="pokemon-form">
+
+        <div class="form-group">
+            <label for="name">Pokemon Name: </label>
+            <input type="text" id="name" formControlName= "name" placeholder = "e.g Pikachu"/>
+        </div>
+        <div class="form-group">
+            <label for="name">Pokemon Type: </label>
+            <input type="text" id="type" formControlName= "type" placeholder = "e.g Electric"/>
+        </div>
+        <div class="form-group">
+            <label for="name">Pokemon Level: </label>
+            <input type="number" id="level" formControlName= "level" placeholder = "e.g 1"/>
+        </div>
+        <div class="form-group">
+            <label for="name">Pokemon Nature: </label>
+            <input type="text" id="nature" formControlName= "nature" placeholder = "e.g Bashful"/>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit"[disabled]= "pokemonForm.invalid" class="btn-submit">Catch Pokemon</button>
+        </div>
+    </form>
+</div>
+
+<hr/>
+
+<h3>Current Pokedex</h3>
+<div class="pokemon-grid">
+    @for(p of pokemonService.pokemonList();track p._id){
+        <div class="pokemon-card">
+            <div class="card-info">
+                <strong>{{p.name}}</strong>
+                <span>(Lvl {{p.level}})</span>
+                <p>Type: {{p.type}} |Nature: {{p.nature}}</p>
+            </div>
+        </div>
+    }
+</div>
