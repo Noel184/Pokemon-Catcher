@@ -2,11 +2,11 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #ff1c1c 50%, #ffffff 50%);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; 
+  align-items: center; 
   height: 100vh;
+  margin: 0;
 }
-
 
 .pokemon-form {
   background: #fff;
@@ -17,7 +17,6 @@ body {
   text-align: center;
   box-shadow: 0 6px 0 #000;
 }
-
 
 .pokemon-form h2 {
   margin-bottom: 15px;
@@ -61,13 +60,12 @@ body {
   border: 3px solid #000;
 }
 
-body {
+.pokemon-grid-layout {
   font-family: "Segoe UI", sans-serif;
   background: #f2f2f2;
   margin: 0;
   padding: 20px;
 }
-
 
 h3 {
   text-align: center;
@@ -76,13 +74,11 @@ h3 {
   letter-spacing: 1px;
 }
 
-
 .pokemon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
-
 
 .pokemon-card {
   background: linear-gradient(to bottom, #ff3b3b 0%, #cc0000 100%);
@@ -95,12 +91,10 @@ h3 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 .pokemon-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 18px rgba(0,0,0,0.3);
 }
-
 
 .card-info {
   background: #fff;
@@ -110,24 +104,20 @@ h3 {
   border: 2px solid #000;
 }
 
-
 .card-info strong {
   font-size: 18px;
   display: block;
 }
-
 
 .card-info span {
   font-size: 14px;
   color: #555;
 }
 
-
 .card-info p {
   margin-top: 8px;
   font-size: 13px;
 }
-
 
 .pokemon-card::after {
   content: "";
@@ -140,7 +130,6 @@ h3 {
   top: -12px;
   right: -12px;
 }
-
 
 .pokemon-card:hover .card-info {
   background: #f9f9f9;

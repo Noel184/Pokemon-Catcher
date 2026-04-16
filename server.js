@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -34,4 +35,16 @@ app.post('/api/pokemon', async(req, res)=>{
     await pokemon.save();
     res.send (pokemon);
     console.log("Added new Pokemon:", pokemon);
+})
+
+//delete request for data
+app.delete('/api/pokemon/:id', async(req, res)=>{
+    await Pokemon.findByIdAndDelete(req.params.id);
+    res.status(204).send;//205 means we have successful deletion
+})
+
+//update request for the data
+app.put('/api/pokemon/:id', async (req,res) =>{
+    const updatePokemon = await Pokemon.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.send(updatePokemon);
 })
